@@ -38,13 +38,11 @@ const links = [
 function Header() {
   return (
     <header className="sticky top-0 z-20 border-b border-[#e4e2dd] bg-[#f6f6f4]/95 backdrop-blur">
-      <div className="container-x flex h-[60px] items-center gap-6">
-        <a href="/" className="flex items-center gap-3">
-          <span className="grid h-8 w-8 place-items-center rounded-md bg-[#131416] text-[15px] font-bold text-white">С</span>
-          <span className="leading-none">
-            <span className="block text-[15px] font-bold tracking-tight">СБОРКА</span>
-            <span className="spec-mono block text-[10px] uppercase tracking-[0.14em] text-[#676c76]">fpv · каталог · гайды</span>
-          </span>
+      <div className="container-x flex h-14 items-center gap-3 sm:h-[60px] sm:gap-6">
+        <a href="/" className="flex items-center gap-2.5 sm:gap-3">
+          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-[#131416] text-[15px] font-bold text-white">С</span>
+          <span className="whitespace-nowrap text-[15px] font-bold leading-none tracking-tight">СБОРКА</span>
+          <span className="spec-mono hidden text-[10px] uppercase tracking-[0.14em] text-[#676c76] lg:block">fpv · каталог · гайды</span>
         </a>
         <nav className="ml-auto hidden items-center gap-1 md:flex">
           {links.map((l) => (
