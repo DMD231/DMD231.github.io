@@ -36,7 +36,7 @@ export default function Home() {
         <div className="container-x grid gap-10 py-12 md:grid-cols-[1.05fr_0.95fr] md:py-20">
           <div className="flex flex-col justify-center">
             <p className="eyebrow eyebrow-dot !text-white/60">Конструктор · Каталог · Гайды · Прошивки</p>
-            <h1 className="h-display mt-5 text-[38px] md:text-[60px]">
+            <h1 className="h-display mt-5 text-[31px] leading-[1.08] sm:text-[40px] md:text-[60px] md:leading-[1.04]">
               Собери дрон,
               <br />
               который полетит
@@ -54,15 +54,15 @@ export default function Home() {
             <dl className="mt-10 grid grid-cols-3 gap-4 border-t border-white/15 pt-6">
               <div>
                 <dt className="eyebrow !text-white/50">Деталей</dt>
-                <dd className="h-display mt-1 text-[26px]">{parts.length}</dd>
+                <dd className="h-display mt-1 min-w-0 text-[22px] md:text-[26px]">{parts.length}</dd>
               </div>
               <div>
                 <dt className="eyebrow !text-white/50">Магазинов РФ</dt>
-                <dd className="h-display mt-1 text-[26px]">{stores.length}</dd>
+                <dd className="h-display mt-1 min-w-0 text-[22px] md:text-[26px]">{stores.length}</dd>
               </div>
               <div>
                 <dt className="eyebrow !text-white/50">Гайдов</dt>
-                <dd className="h-display mt-1 text-[26px]">4</dd>
+                <dd className="h-display mt-1 min-w-0 text-[22px] md:text-[26px]">4</dd>
               </div>
             </dl>
           </div>
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="container-x grid gap-10 py-14 md:grid-cols-2 md:py-20">
           <div>
             <p className="eyebrow eyebrow-dot">Процесс</p>
-            <h2 className="h-display mt-3 text-[28px] md:text-[36px]">От идеи до первого армирования — 3 шага</h2>
+            <h2 className="h-display mt-3 text-[24px] sm:text-[28px] md:text-[36px]">От идеи до первого армирования — 3 шага</h2>
             <ol className="mt-8">
               {[
                 ['01', 'Цель и бюджет', 'Фристайл 5″, вупик 65 мм для дома, дальнолет 7″ или съемка на цифре.'],

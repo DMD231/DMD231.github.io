@@ -15,7 +15,7 @@ export default function GuidesPage() {
   return (
     <main className="container-x py-10">
       <p className="eyebrow eyebrow-dot">Гайды · {guides.length} штук · со схемами пайки</p>
-      <h1 className="h-display mt-2 text-[32px] md:text-[46px]">Сборка по шагам, без магии</h1>
+      <h1 className="h-display mt-2 text-[26px] sm:text-[32px] md:text-[46px]">Сборка по шагам, без магии</h1>
       <p className="mt-3 max-w-2xl text-[15px] text-[#6f6e69]">Схемы подключения — прямо в гайдах. Красный — плюс, черный — земля, желтый — сигнал. Паяем при отключенной батарее.</p>
       <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_320px]">
         <div className="space-y-6">

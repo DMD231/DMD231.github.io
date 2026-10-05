@@ -62,9 +62,9 @@ export default async function ReadyCard({ params }: { params: Promise<{ id: stri
         <p className="eyebrow eyebrow-dot">Характеристики</p>
         <dl className="mt-4 grid gap-x-8 md:grid-cols-2">
           {Object.entries(d.specs).map(([k, v]) => (
-            <div key={k} className="grid grid-cols-[160px_1fr] gap-3 border-b border-[#e3e1da] py-2.5 text-[14px]">
+            <div key={k} className="grid grid-cols-[118px_1fr] gap-3 border-b border-[#e3e1da] py-2.5 text-[14px] sm:grid-cols-[160px_1fr]">
               <dt className="text-[#6f6e69]">{k}</dt>
-              <dd className="font-semibold">{v}</dd>
+              <dd className="font-semibold break-words">{v}</dd>
             </div>
           ))}
         </dl>

@@ -44,7 +44,7 @@ function Bundle({ part }: { part: Part }) {
                 <span className="block truncate text-[14px] font-bold">{p.name}</span>
                 <span className="spec-mono text-[11px] text-[#6f6e69]">{categoryLabels[p.category]}</span>
               </span>
-              <span className="ml-auto whitespace-nowrap font-mono text-[14px] font-bold">{p.priceRub.toLocaleString('ru-RU')} ₽</span>
+              <span className="ml-auto whitespace-nowrap font-mono text-[13px] font-bold sm:text-[14px]">{p.priceRub.toLocaleString('ru-RU')} ₽</span>
             </Link>
           );
         })}
@@ -101,9 +101,9 @@ export default async function PartPage({ params }: { params: Promise<{ id: strin
           <p className="eyebrow eyebrow-dot">Характеристики</p>
           <dl className="mt-4 divide-y divide-[#e3e1da] border-y border-[#e3e1da]">
             {Object.entries(part.specs).map(([k, v]) => (
-              <div key={k} className="grid grid-cols-[160px_1fr] gap-3 py-2.5 text-[14px]">
+              <div key={k} className="grid grid-cols-[118px_1fr] gap-3 py-2.5 text-[14px] sm:grid-cols-[160px_1fr]">
                 <dt className="text-[#6f6e69]">{k.replaceAll('_', ' ')}</dt>
-                <dd className="font-semibold">{v}</dd>
+                <dd className="font-semibold break-words">{v}</dd>
               </div>
             ))}
           </dl>

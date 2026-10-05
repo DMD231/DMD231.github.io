@@ -31,7 +31,7 @@ export default function ConstructorPage() {
   return (
     <main className="container-x py-10">
       <p className="eyebrow">Конструктор · проверка совместимости live</p>
-      <h1 className="h-display mt-2 text-[34px] md:text-[48px]">Собери комплект без конфликтов</h1>
+      <h1 className="h-display mt-2 text-[28px] sm:text-[34px] md:text-[48px]">Собери комплект без конфликтов</h1>
 
       <div className="card mt-6 grid sm:grid-cols-3">
         {goals.map((g) => (
@@ -64,17 +64,17 @@ export default function ConstructorPage() {
                 {items.map((p) => {
                   const active = build[cat]?.id === p.id;
                   return (
-                    <label key={p.id} className={`grid cursor-pointer grid-cols-[20px_72px_1fr_auto] items-start gap-3 px-5 py-4 hover:bg-[#fafaf9] ${active ? 'bg-[#fff7f2]' : ''}`}>
+                    <label key={p.id} className={`grid cursor-pointer grid-cols-[20px_56px_1fr_auto] items-start gap-2 px-4 py-4 hover:bg-[#fafaf9] sm:grid-cols-[20px_72px_1fr_auto] sm:gap-3 sm:px-5 ${active ? 'bg-[#fff7f2]' : ''}`}>
                       <input type="radio" name={cat} checked={active} onChange={() => pick(cat, p.id)} className="mt-1 h-4 w-4 accent-[#ff4d00]" />
                       <PartMini part={p} />
-                      <span>
-                        <span className="block text-[15px] font-bold leading-snug">{p.name}</span>
-                        <span className="spec-mono mt-1 block text-[12px] text-[#676c76]">
+                      <span className="min-w-0">
+                        <span className="block text-[14px] font-bold leading-snug sm:text-[15px]">{p.name}</span>
+                        <span className="spec-mono mt-1 hidden text-[12px] text-[#676c76] min-[420px]:block">
                           {Object.entries(p.specs).slice(0, 3).map(([k, v]) => `${k}: ${v}`).join(' · ')}
                         </span>
                       </span>
-                      <span className="text-right">
-                        <span className="block font-mono text-[15px] font-bold">{p.priceRub.toLocaleString('ru-RU')} ₽</span>
+                      <span className="whitespace-nowrap text-right">
+                        <span className="block font-mono text-[13px] font-bold sm:text-[15px]">{p.priceRub.toLocaleString('ru-RU')} ₽</span>
                         <span className="spec-mono block text-[11px] text-[#676c76]">★ {p.rating}</span>
                         <a href={`/catalog/${p.id}`} className="spec-mono mt-1 inline-block text-[11px] font-bold text-[#b23400] underline underline-offset-2">Карточка →</a>
                       </span>

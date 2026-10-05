@@ -4,7 +4,7 @@ export default function FirmwarePage() {
   return (
     <main className="container-x py-10">
       <p className="eyebrow">Прошивки · только официальные релизы</p>
-      <h1 className="h-display mt-2 text-[34px] md:text-[48px]">Софт, который шьем</h1>
+      <h1 className="h-display mt-2 text-[28px] sm:text-[34px] md:text-[48px]">Софт, который шьем</h1>
       <p className="mt-3 max-w-2xl text-[15px] text-[#676c76]">Перед обновлением — бэкап: <span className="font-mono">diff all</span> в Betaflight / INAV. ELRS — одна binding-фраза на пульте и приемнике.</p>
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         {firmwares.map((f) => (

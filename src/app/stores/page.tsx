@@ -4,7 +4,7 @@ export default function StoresPage() {
   return (
     <main className="container-x py-10">
       <p className="eyebrow">Магазины · {stores.length} точек · Москва + доставка по РФ</p>
-      <h1 className="h-display mt-2 text-[34px] md:text-[48px]">Где брать детали</h1>
+      <h1 className="h-display mt-2 text-[28px] sm:text-[34px] md:text-[48px]">Где брать детали</h1>
       <div className="card mt-8 overflow-hidden">
         <div className="hidden grid-cols-[180px_1fr_220px_90px_120px] gap-4 border-b border-[#e4e2dd] bg-[#f6f6f4] px-6 py-3 md:grid">
           <span className="eyebrow">Магазин</span>

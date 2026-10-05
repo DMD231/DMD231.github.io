@@ -32,7 +32,7 @@ export function PartThumb({ category, label, src }: { category: Category; label?
 export function PartMini({ part }: { part: { image?: string; category: Category; name: string } }) {
   const { src, pos } = resolveImage(part);
   return (
-    <span className="block h-14 w-[72px] shrink-0 overflow-hidden rounded-lg border border-[#e3e1da] bg-[#e7e5df]">
+    <span className="block h-12 w-14 shrink-0 overflow-hidden rounded-lg border border-[#e3e1da] bg-[#e7e5df] sm:h-14 sm:w-[72px]">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt={part.name} loading="lazy" style={{ objectPosition: pos }} className="h-full w-full object-cover" />
     </span>

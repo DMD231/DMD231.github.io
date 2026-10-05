@@ -8,7 +8,7 @@ export default function ReadyPage() {
   return (
     <main className="container-x py-10">
       <p className="eyebrow eyebrow-dot">Готовые дроны · {readyDrones.length} моделей · фото производителей</p>
-      <h1 className="h-display mt-2 text-[32px] md:text-[46px]">Не хочешь паять — взлетай из коробки</h1>
+      <h1 className="h-display mt-2 text-[26px] sm:text-[32px] md:text-[46px]">Не хочешь паять — взлетай из коробки</h1>
       <p className="mt-3 max-w-2xl text-[15px] text-[#6f6e69]">
         <b>BNF</b> — дрон связан и настроен, докупить пульт, очки и АКБ. <b>RTF</b> — полный комплект в коробке.
         Цены — ориентиры РФ, наличие проверяй в магазинах.

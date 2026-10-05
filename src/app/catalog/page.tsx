@@ -15,7 +15,7 @@ export default function CatalogPage() {
   return (
     <main className="container-x py-10">
       <p className="eyebrow">Каталог · {parts.length} позиций · цены РФ 2026</p>
-      <h1 className="h-display mt-2 text-[34px] md:text-[48px]">Детали с характеристиками и отзывами</h1>
+      <h1 className="h-display mt-2 text-[28px] sm:text-[34px] md:text-[48px]">Детали с характеристиками и отзывами</h1>
       <p className="mt-3 max-w-2xl text-[15px] text-[#676c76]">Ручная база: проверяли карточки MyDrone, iDrone, Dronextech и Чистого небосвода. Наличие уточняй по кнопке магазина.</p>
 
       <div className="mt-8 grid gap-6 md:grid-cols-[240px_1fr]">
@@ -29,14 +29,14 @@ export default function CatalogPage() {
               className="mt-2 w-full rounded-lg border border-[#e4e2dd] bg-[#f6f6f4] px-3 py-2.5 text-[14px] outline-none focus:border-[#131416]"
             />
             <p className="eyebrow mt-5">Категория</p>
-            <div className="mt-2 space-y-1">
-              <button onClick={() => setCat('all')} className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-[14px] ${cat === 'all' ? 'bg-[#131416] font-semibold text-white' : 'hover:bg-[#ecebe7]'}`}>
+            <div className="mt-2 flex flex-wrap gap-1.5 md:grid md:gap-0 md:space-y-1">
+              <button onClick={() => setCat('all')} className={`flex items-center gap-2 rounded-full border border-[#e4e2dd] px-3 py-1.5 text-[13px] md:w-full md:items-center md:justify-between md:rounded-lg md:px-3 md:py-2 md:text-[14px] ${cat === 'all' ? '!border-[#131416] bg-[#131416] font-semibold text-white' : 'bg-white hover:bg-[#ecebe7]'}`}>
                 Все <span className="spec-mono text-[12px] opacity-60">{parts.length}</span>
               </button>
               {(Object.keys(categoryLabels) as Category[]).map((c) => {
                 const n = parts.filter((p) => p.category === c).length;
                 return (
-                  <button key={c} onClick={() => setCat(c)} className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-[14px] ${cat === c ? 'bg-[#131416] font-semibold text-white' : 'hover:bg-[#ecebe7]'}`}>
+                  <button key={c} onClick={() => setCat(c)} className={`flex items-center gap-2 rounded-full border border-[#e4e2dd] px-3 py-1.5 text-[13px] md:w-full md:items-center md:justify-between md:rounded-lg md:px-3 md:py-2 md:text-[14px] ${cat === c ? '!border-[#131416] bg-[#131416] font-semibold text-white' : 'bg-white hover:bg-[#ecebe7]'}`}>
                     {categoryLabels[c]} <span className="spec-mono text-[12px] opacity-60">{n}</span>
                   </button>
                 );
