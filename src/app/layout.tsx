@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Unbounded, Manrope, JetBrains_Mono } from "next/font/google";
+import BottomBar from "@/components/BottomBar";
 import "./globals.css";
 
 const display = Unbounded({
@@ -52,16 +53,7 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a href="/constructor" className="btn-primary ml-auto !py-2 md:ml-0">Собрать дрон</a>
-      </div>
-      <div className="border-t border-[#e4e2dd] md:hidden">
-        <div className="container-x flex gap-1 overflow-x-auto py-2">
-          {links.map((l) => (
-            <a key={l.href} href={l.href} className="whitespace-nowrap rounded-md px-3 py-1.5 text-[13px] font-medium hover:bg-[#e9e8e4]">
-              {l.label}
-            </a>
-          ))}
-        </div>
+        <a href="/constructor" className="btn-primary ml-auto hidden !py-2 sm:inline-flex md:ml-0">Собрать дрон</a>
       </div>
     </header>
   );
@@ -121,8 +113,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${display.variable} ${sans.variable} ${mono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <Header />
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 pb-[76px] md:pb-0">{children}</div>
         <Footer />
+        <BottomBar />
       </body>
     </html>
   );
