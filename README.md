@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Сборка — конструктор FPV-дронов
 
-## Getting Started
+**Демо:** https://dmd231.github.io
 
-First, run the development server:
+Независимый каталог для самостоятельной сборки дронов: подбор совместимых комплектующих,
+цены магазинов РФ, мега-гайды со схемами пайки, прошивки и готовые дроны.
+
+## Что внутри
+
+- **Конструктор** (`/constructor`) — квиз по цели (фристайл / дальнолет / съемка), live-проверка
+  совместимости (монтаж, вольтаж, аналог/цифра, ELRS-диапазоны), смета и время полета
+- **Каталог** (`/catalog`) — 32 детали с официальными фото, полными характеристиками,
+  реальными отзывами и кнопками РФ-магазинов; у каждого товара своя карточка (`/catalog/[id]`)
+- **Готовые дроны** (`/ready`) — 9 BNF/RTF: Mobula6, GEPRC (MARK5, MOZ7, Cinebot…), DJI (Avata 2, Mini 4 Pro, Mavic 3 Pro)
+- **Гайды** (`/guides`) — 6 подробных: сборка 5", пайка, ELRS, Betaflight, INAV-дальнолет, ремонт + SVG-схемы подключения
+- **Прошивки** (`/firmware`) — Betaflight, INAV, ArduPilot, ELRS, Bluejay, OpenVTX
+- **Магазины РФ** (`/stores`) — 13 точек: что где брать
+
+## Стек
+
+Next.js 16 (App Router, статический экспорт), React 19, Tailwind CSS 4, TypeScript.
+Шрифты: Unbounded + Manrope + JetBrains Mono (все с кириллицей).
+
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # статика в папке out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Деплой
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+GitHub Pages, автоматически через `.github/workflows/deploy.yml` при пуше в `main`.
+Репозиторий должен называться `<username>.github.io` — тогда сайт лежит в корне.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Данные
 
-## Learn More
+- `src/data/parts.ts` — детали (цены — ориентиры РФ, сверяй наличие)
+- `src/data/ready.ts` — готовые дроны
+- `src/data/stores.ts` — магазины
+- `src/data/content.ts` — гайды и прошивки
+- Фото товаров — официальные сайты производителей, лежат в `public/images/`
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+БПЛА тяжелее 150 г — учет в Росавиации. Частоты и мощность VTX — по законодательству РФ.
